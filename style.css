@@ -108,6 +108,9 @@ button:hover {
 .result{
     font-size: 30px;
     margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 label{

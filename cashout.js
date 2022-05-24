@@ -9,9 +9,10 @@ function calculo(){
     let lucroA = document.getElementById('lucroA');
     let lucroB = document.getElementById('lucroB');
     let resultadotexto = document.getElementById('resultadotexto');
+
     
-    // Coloquei a criação da variável fora do IF para que seja possível acessar o valor nos outros IFs
-    let resultadoA = 0; let resultadoB = 0; 
+    
+    let resultadoA = 0; let resultadoB = 0; let resultadotex = '';
     
     if (entrada1 !== '' && odd1 !== '') {
         resultadoA = ((entrada1 * odd1) - entrada1 ).toFixed(2);
@@ -31,13 +32,29 @@ function calculo(){
         oddMinima.textContent = result;
     }
     
-    // Você tava comparando com o "lucroA", mas essa variável não tá acessando o valor do campo!
-    if (entrada2 > resultadoA){
-        let resultadotex = `TEAM A WIN = (${resultadoA-entrada2}) / TEAM B WIN = (${resultadoB})`;
+    if (entrada1 !== '' && odd1 !== '' && entrada2 !== '' && odd2 !== ''){
 
-        resultadotexto.textContent = resultadotex;
-
+        if (entrada2 > resultadoA){
+            resultadotex = ` Você perde no Time A (${(resultadoA - entrada2).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}) e ganha no Time B (${(resultadoB).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})});`
+            resultadotexto.textContent = resultadotex
+    
+    
+        }else if(entrada2 < resultadoA){
+            resultadotex = ` Você ganha no Time A (${(resultadoA - entrada2).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}) e ganha no Time B (${(resultadoB).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})})`
+            resultadotexto.textContent = resultadotex
+       
+        }else {
+            resultadotex = `Você ganha no Time A (${(resultadoA - entrada2).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}) e ganha no Time B (${(resultadoB).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})})`
+            resultadotexto.textContent = resultadotex
+        }
     }
+    
+        
+
+
+
+
+
 
     
 
