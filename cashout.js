@@ -20,10 +20,26 @@ function calculo(){
         lucroA.textContent = resultadoA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
     }
 
-    if (entrada2 !== '' && odd2 !== '') {    
-        resultadoB = ((entrada2 * odd2) - entrada2 );
-    
-        lucroB.textContent = resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});    
+    if (((entrada2 == resultadoA) && odd2 !== '') || ((entrada2 > resultadoA)&& odd2 !== '') || ((entrada2 < resultadoA)&& odd2 !== '')) {          
+        resultadoA = (resultadoA - entrada2);
+        resultadoB = (((entrada2 * odd2) - entrada2)-entrada1 );
+
+        lucroA.textContent = resultadoA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});   
+        lucroB.textContent = resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});   
+
+    } else if ((entrada2 > resultadoA) && odd2 !== ''){
+        resultadoA = (resultadoA - entrada2);
+        resultadoB = (((entrada2 * odd2) - entrada2)-entrada1 );
+
+        lucroA.textContent = resultadoA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});   
+        lucroB.textContent = resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});  
+
+    }else if ((entrada2 < resultadoA) && odd2 !== ''){
+        resultadoA = (resultadoA - entrada2);
+        resultadoB = (((entrada2 * odd2) - entrada2)-entrada1 );
+
+        lucroA.textContent = resultadoA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});   
+        lucroB.textContent = resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});  
     }
 
     if (odd1 !== '') {        
@@ -31,36 +47,9 @@ function calculo(){
 
         oddMinima.textContent = result;
     }
-    
-    if (entrada1 !== '' && odd1 !== '' && entrada2 !== '' && odd2 !== ''){
-
-        if (entrada2 > resultadoA){
-            resultadotex = ` Você perde no Time A (${(resultadoA - entrada2).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}) e ganha no Time B (${resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})});`
-            
-    
-    
-        }else if(entrada2 < resultadoA){
-            resultadotex = ` Você ganha no Time A (${(resultadoA - entrada2).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}) e ganha no Time B (${resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})})`
-            
-       
-        }else {
-            resultadotex = `Você ganha no Time A (${(resultadoA - entrada2).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}) e ganha no Time B (${resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})})`
-            
-        }
         
-        resultadotexto.textContent = resultadotex
-    }
-    
+        resultadotexto.textContent = resultadotex   
         
-
-
-
-
-
-
-    
-
-
 }
 
 calcular.addEventListener('click', calculo);
