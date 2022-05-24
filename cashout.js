@@ -25,21 +25,7 @@ function calculo(){
         resultadoB = (((entrada2 * odd2) - entrada2)-entrada1 );
 
         lucroA.textContent = resultadoA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});   
-        lucroB.textContent = resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});   
-
-    } else if ((entrada2 > resultadoA) && odd2 !== ''){
-        resultadoA = (resultadoA - entrada2);
-        resultadoB = (((entrada2 * odd2) - entrada2)-entrada1 );
-
-        lucroA.textContent = resultadoA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});   
-        lucroB.textContent = resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});  
-
-    }else if ((entrada2 < resultadoA) && odd2 !== ''){
-        resultadoA = (resultadoA - entrada2);
-        resultadoB = (((entrada2 * odd2) - entrada2)-entrada1 );
-
-        lucroA.textContent = resultadoA.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});   
-        lucroB.textContent = resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});  
+        lucroB.textContent = resultadoB.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});     
     }
 
     if (odd1 !== '') {        
